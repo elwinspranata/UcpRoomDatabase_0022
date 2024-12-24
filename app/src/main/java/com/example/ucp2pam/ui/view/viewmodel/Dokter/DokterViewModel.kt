@@ -81,6 +81,7 @@ data class DokterEvent(
     val jamKerja: String = ""
 )
 
+
 fun DokterEvent.toDokterEntity(): Dokter = Dokter(
     idDokter = idDokter,
     nama = nama,
