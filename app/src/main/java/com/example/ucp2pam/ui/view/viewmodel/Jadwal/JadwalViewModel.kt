@@ -31,6 +31,7 @@ class JadwalViewModel(private val repositoryJadwalDokter: RepositoryJadwalDokter
         return errorState.isValid()
     }
 
+
     fun saveData() {
         val currentEvent = uistate.jadwalEvent
         if (validateFields()) {
