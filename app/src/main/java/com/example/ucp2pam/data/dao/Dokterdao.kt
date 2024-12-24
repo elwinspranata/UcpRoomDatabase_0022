@@ -1,30 +1,20 @@
 package com.example.ucp2pam.data.dao
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
 import com.example.ucp2pam.data.entity.Dokter
+import com.example.ucp2pam.data.entity.Jadwal
+import kotlinx.coroutines.flow.Flow
 
 @Dao
-interface Dokterdao {
+interface DokterDao {
     @Insert
-    suspend fun insertDokterdao(Dokter: Dokter)
+    suspend fun insertDokter(dokter: Dokter)
 
-    @Update
-    suspend fun updateDokterdao(dokter: Dokter)
+    @Query("SELECT * FROM dokter ORDER BY idDokter ASC")
+    fun getAllDokter() : Flow<List<Dokter>>
 
-    @Delete
-    suspend fun deleteDokterdao(dokter: Dokter)
 
-    @Query("SELECT * FROM Dokter")
-    suspend fun getAllDokter(): List<Dokter>
-
-    @Query("SELECT * FROM Dokter WHERE id = :id")
-    suspend fun getDokterById(id: Int): Dokter?
-
-    @Query("DELETE FROM Dokter")
-    suspend fun deleteAllDokter()
+    @Query("SELECT * FROM dokter WHERE idDokter = :idDokter")
+    fun getDokter(idDokter: String) : Flow<Dokter>
 
 }
