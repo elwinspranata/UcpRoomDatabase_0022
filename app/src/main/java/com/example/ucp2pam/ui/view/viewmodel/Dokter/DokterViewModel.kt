@@ -31,7 +31,7 @@ class DokterViewModel(private val repositoryDokter: RepositoryDokter) : ViewMode
         return errorState.isValid()
     }
 
-    
+
     fun saveData() {
         val currentEvent = uistate.dokterEvent
         if (validateFields()) {
@@ -59,6 +59,7 @@ class DokterViewModel(private val repositoryDokter: RepositoryDokter) : ViewMode
             )
         }
     }
+
 
     fun resetSnackBarMessage() {
         uistate = uistate.copy(snackBarMessage = null)
