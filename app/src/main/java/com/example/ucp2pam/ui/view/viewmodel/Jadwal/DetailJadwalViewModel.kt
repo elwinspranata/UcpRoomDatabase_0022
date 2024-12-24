@@ -52,6 +52,7 @@ class DetailJadwalViewModel(
             ),
         )
 
+
     fun deleteJdwl() {
         val currentEvent = detailUiState.value.detailUiEvent
         if (currentEvent != JadwalEvent()) {
