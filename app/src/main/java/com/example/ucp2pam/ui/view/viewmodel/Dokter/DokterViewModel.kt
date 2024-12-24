@@ -31,6 +31,7 @@ class DokterViewModel(private val repositoryDokter: RepositoryDokter) : ViewMode
         return errorState.isValid()
     }
 
+    
     fun saveData() {
         val currentEvent = uistate.dokterEvent
         if (validateFields()) {
