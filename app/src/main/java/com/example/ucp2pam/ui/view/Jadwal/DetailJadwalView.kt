@@ -84,6 +84,7 @@ fun DetailJadwalView(
         )
     }
 }
+
 @Composable
 fun BodyDetailJadwal(
     modifier: Modifier = Modifier,
